@@ -1,0 +1,34 @@
+
+.ConverterStart {
+  display: flex;
+  justify-content: center;
+  width: 1400px;
+  height: 555px;
+}
+.ConverterStart-block {
+   width:900px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.Converter-left {
+   width: 380px;
+}
+.Converter-left-text1 {
+   font-size: 40px;
+   font-weight: 700;
+}
+.Converter-left-text2 {
+   font-size: 20px;
+   color:#707C87;
+   margin: 15px 0;
+   
+}
+button.ConvertStart {
+   width: 250px;
+   height: 60px;
+   background-color: #2C36F2;
+   color: #F6F7FF;
+   font-size: 18px;
+   font-weight: 500;
+}

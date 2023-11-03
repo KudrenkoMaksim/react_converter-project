@@ -1,0 +1,83 @@
+
+.Converter {
+   height: 560px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #F6F7FF;
+}
+.Converter-block {
+   box-sizing: border-box;
+   width: 960px;
+   height: 400px;
+   background-color:white;
+   padding: 50px;
+}
+.Block-input {
+   display: flex;
+   justify-content: space-between;
+}
+.Converter-block-left {
+   width: 370px;
+}
+.Converter-block-right {
+   width: 370px;
+}
+.input {
+   display: flex;
+   justify-content: space-between;
+}
+input[type='number'] {
+   width: 220px;
+   height: 60px;
+   border: 1px solid #707C87;
+   margin: 20px 0;
+   font-weight: 600;
+   font-size: 20px;
+   color: #707C87;
+}
+input[type='date'] {
+   width: 220px;
+   height: 60px;
+   border: 1px solid #707C87;
+   font-size: 20px;
+   font-weight: 600;
+   color: #707C87;
+}
+select {
+   width: 120px;
+   height: 60px;
+   border: 1px solid #707C87;
+   margin-top: 20px;
+   font-size: 20px;
+   color: #707C87;
+   font-weight: 500;
+}
+.Converter-text {
+   font-size: 40px;
+   font-weight: 700;
+   margin-bottom: 50px;
+}
+.Converter-left-text, .Converter-right-text {
+   font-size: 20px;
+   color: #707C87;
+   font-weight: 500;
+  
+}
+.Button-save-result {
+   width: 220px;
+   height: 60px;
+   background-color: #2C36F2;
+   color: #F6F7FF;
+   font-size: 18px;
+   font-weight: 500;
+}
+.Button-result {
+   display: flex;
+   justify-content: end;
+}
+.Converter-block-center {
+   display: flex;
+   align-items: center;
+   margin-bottom: 40px;
+}

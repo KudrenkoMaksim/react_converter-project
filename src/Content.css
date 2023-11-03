@@ -1,0 +1,33 @@
+
+.Content {
+   background: url('./img/Rectangle.png');
+   height: 400px;
+   display:flex;
+   justify-content: center;
+
+   
+}
+.Content-block {
+   display: flex;
+   justify-content:space-between;
+   align-items: center;
+   width: 900px;
+}
+.Content-left-text2 {
+   margin: 20px 0;
+   font-size: 15px;
+   color: #F6F7FF;
+
+}
+.Content-left-text1 {
+   font-size: 54px;
+   font-weight: 700;
+   color: #F6F7FF;
+}
+button.Convert {
+   width: 235px;
+   height: 55px;
+   font-size: 18px;
+   font-weight: 500;
+   color:#707C87;
+}
