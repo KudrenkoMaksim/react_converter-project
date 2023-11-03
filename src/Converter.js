@@ -7,10 +7,8 @@ import React from 'react';
 
 function Converter () {
    // данные по курсу валют из сайта
-   const [rates, setRates] = useState([]);//массив объектов с сервера
+   const [rates, setRates] = useState([]);
    console.log(rates)
-  
-
    useEffect(() => {
       fetch(`https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json`)
         .then(response => response.json())
@@ -24,66 +22,65 @@ function Converter () {
 
 
     // курс валют левого селекта и вычисления
-    const [leftCurrencyRate, setLeftCurrencyRate]=useState(0.37845)//значение курса выбранной валюты слева
-    const [currencyLeft, setCurrencyLeft]=useState('RUB')//выбранная валюта слева
+    const [leftCurrencyRate, setLeftCurrencyRate]=useState(0.37845)
+    const [currencyLeft, setCurrencyLeft]=useState('RUB')
 
-    function FindRateLeft (e) {//запускается при изменении левого селекта
-      const element=rates.find((el)=>el.cc===e.target.value) //нахождение выбранного объекта с валютой
-      console.log(element.rate)//значение курса из выбранного объекта валюты
+    function FindRateLeft (e) {
+      const element=rates.find((el)=>el.cc===e.target.value) 
+      console.log(element.rate)
       
       const result=(+element.rate/rightCurrencyRate)*valueLeft
-      setLeftCurrencyRate(+element.rate)// запись в переменную
-      setValueRight(result) //запись результата в правый инпут
+      setLeftCurrencyRate(+element.rate)
+      setValueRight(result) 
       setCurrencyLeft(element.cc)
     }
     console.log(leftCurrencyRate)
     console.log(typeof leftCurrencyRate)
 
     //курс валют правого селекта и вычисления
-    const [rightCurrencyRate, setRightCurrencyRate]=useState(0.37845)//значение курса выбранной валюты справа
-    const [currencyRight, setCurrencyRight]=useState('RUB')//выбранная валюта справа
+    const [rightCurrencyRate, setRightCurrencyRate]=useState(0.37845)
+    const [currencyRight, setCurrencyRight]=useState('RUB')
     
-    function FindRateRight (e) {//запускается при изменении правого селекта
-      const element=rates.find((el)=>el.cc===e.target.value)//нахождение выбранного объекта с валютой
-      console.log(+element.rate)//значение курса из выбранного объекта валюты
+    function FindRateRight (e) {
+      const element=rates.find((el)=>el.cc===e.target.value)
+      console.log(+element.rate)
      
       const result=(+element.rate/leftCurrencyRate)*valueRight
        setRightCurrencyRate (element.rate)
-      setValueLeft(result) //запись результата в левый инпут
+      setValueLeft(result) 
       setCurrencyRight(element.cc)
     }
       console.log(rightCurrencyRate)
       console.log(typeof rightCurrencyRate)
     
     //значение поля левого инпута и вычисления
-    const [valueLeft, setValueLeft]=useState(100)//значение левого поля инпута
-    function ValueInputLeft (e) {//запуск при измен левого поля инпута
+    const [valueLeft, setValueLeft]=useState(100)
+    function ValueInputLeft (e) {
 
-      const valueLeft=+e.target.value//получаем значение левого инпута
+      const valueLeft=+e.target.value
       const result=(leftCurrencyRate/rightCurrencyRate)*valueLeft
-      setValueRight(result) //запись результата в правый инпут
-      setValueLeft(+e.target.value)//обновление значения поля левого инпута
+      setValueRight(result) 
+      setValueLeft(+e.target.value)
 
     }
     console.log(valueLeft)
     console.log(typeof valueLeft)
 
     //значение поля правого инпута и вычисления
-    const [valueRight, setValueRight]=useState(100)//значение правого поля инпута
+    const [valueRight, setValueRight]=useState(100)
 
-    function ValueInputRight (e) {//запуск при измен правого поля инпута
-      const valueRight=+e.target.value//получаем значение правого инпута
+    function ValueInputRight (e) {
+      const valueRight=+e.target.value
       const result=(rightCurrencyRate/leftCurrencyRate)*valueRight
-      setValueLeft(result) //запись результата в левый инпут
-      setValueRight(+e.target.value)//обновление значения поля правого инпута
-      
+      setValueLeft(result) 
+      setValueRight(+e.target.value)
     }
     console.log(valueRight)
     console.log(typeof valueRight)
 
    //  получение текущей даты из инпута дата
-   let inputDate= React.createRef()//подключаем реф
-   const [dateSave,setDateSave]=useState('2023-08-10') //значение даты в перменной
+   let inputDate= React.createRef()
+   const [dateSave,setDateSave]=useState('2023-08-10')
    
    function SaveResultDate () {
       const dateSave=inputDate.current.value
@@ -91,7 +88,6 @@ function Converter () {
    }
 
    // получение данных из инпутов в массив объектов для вывода истории сохранений
-   
       const [saveStoryArr, setSaveStoryArr]=useState([])
       console.log(saveStoryArr)
 
